@@ -174,3 +174,36 @@ window.addEventListener('resize', function() {
 // Prevenir comportamientos no deseados
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('dragstart', event => event.preventDefault());
+
+// Funcionalidad del botón de modo oscuro/claro
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Verificar si hay un tema guardado en localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        updateThemeIcon(true);
+    }
+    
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        
+        // Guardar preferencia en localStorage
+        const isDarkMode = body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        
+        // Actualizar el icono del botón
+        updateThemeIcon(isDarkMode);
+    });
+    
+    function updateThemeIcon(isDarkMode) {
+        const icon = themeToggle.querySelector('i');
+        if (isDarkMode) {
+            icon.className = 'fas fa-sun';
+        } else {
+            icon.className = 'fas fa-moon';
+        }
+    }
+});
