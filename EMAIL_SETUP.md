@@ -1,27 +1,29 @@
-# Configuración del Formulario de Contacto
+# Configuración de Envío de Correos Electrónicos
 
-Este portafolio incluye un formulario de contacto que permite a los visitantes enviar correos electrónicos directamente al propietario del sitio.
+## Instrucciones para Configurar el Formulario de Contacto
 
-## Configuración Requerida
+Para que el formulario de contacto funcione y envíe correos electrónicos a `frank.anconeyra@tecsup.edu.pe`, debes configurar tus credenciales de correo electrónico.
 
-Para que el formulario de contacto funcione correctamente, debes configurar los siguientes parámetros en el archivo `server.py`:
+### 1. Configuración Requerida en server.py
 
-1. **Correo del remitente** (línea 51):
-   ```python
-   sender_email = "tu_correo@gmail.com"  # Reemplaza con tu correo
-   ```
+Actualiza las siguientes líneas en el archivo `/workspace/server.py`:
 
-2. **Contraseña del correo** (línea 52):
-   ```python
-   sender_password = "tu_contraseña"     # Reemplaza con tu contraseña o app password
-   ```
+#### Línea 51 - Correo del remitente:
+```python
+sender_email = "tu_correo@gmail.com"  # Reemplaza con tu correo (por ejemplo, una cuenta de Gmail)
+```
 
-3. **Correo del destinatario** (línea 53):
-   ```python
-   recipient_email = "frank.anconeyra@tecsup.edu.pe"  # Reemplaza con tu correo de recepción
-   ```
+#### Línea 52 - Contraseña del correo:
+```python
+sender_password = "tu_contraseña"     # Reemplaza con tu contraseña o app password
+```
 
-## Configuración de Gmail (recomendado)
+#### Línea 53 - Correo del destinatario (ya está configurado correctamente):
+```python
+recipient_email = "frank.anconeyra@tecsup.edu.pe"  # Tu correo de recepción
+```
+
+### 2. Configuración de Gmail (recomendado)
 
 Si usas una cuenta de Gmail, necesitarás:
 
@@ -36,7 +38,7 @@ Para crear una App Password:
 4. Genera una nueva contraseña de aplicación para "Correo"
 5. Usa esta contraseña en lugar de tu contraseña normal
 
-## Configuración para otros proveedores de correo
+### 3. Configuración para otros proveedores de correo
 
 Si no usas Gmail, necesitarás ajustar:
 
@@ -44,13 +46,13 @@ Si no usas Gmail, necesitarás ajustar:
 2. El puerto SMTP (línea 79): Gmail usa 587 para TLS
 3. Posiblemente el tipo de cifrado (línea 80): Algunos proveedores usan SSL en lugar de TLS
 
-## Importante
+### 4. Importante
 
 - El formulario de contacto enviará los mensajes a tu correo electrónico cuando alguien lo complete
 - Asegúrate de probar la funcionalidad antes de publicar tu sitio
 - Considera usar servicios de terceros como EmailJS para implementaciones en producción si no deseas manejar directamente el envío de correos
 
-## Iniciar el servidor
+### 5. Iniciar el servidor
 
 Para probar la funcionalidad:
 

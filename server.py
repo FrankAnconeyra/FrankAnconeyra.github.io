@@ -50,7 +50,7 @@ class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         # Aquí debes reemplazar con tus propios detalles de correo
         sender_email = "tu_correo@gmail.com"  # Reemplaza con tu correo
         sender_password = "tu_contraseña"     # Reemplaza con tu contraseña o app password
-        recipient_email = "frank.anconeyra@example.com"  # Reemplaza con tu correo de recepción
+        recipient_email = "frank.anconeyra@tecsup.edu.pe"  # Reemplaza con tu correo de recepción
         
         # Crear el mensaje
         msg = MIMEMultipart()
