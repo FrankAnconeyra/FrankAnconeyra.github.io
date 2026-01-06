@@ -55,6 +55,13 @@ Este es un portafolio web profesional moderno y atractivo para Frank Anconeyra, 
 - Efectos de aparición al hacer scroll
 - Hover effects en botones y tarjetas
 - Animaciones de carga
+- Formulario de contacto funcional que envía correos electrónicos
+
+### Formulario de Contacto
+- Campo para nombre, email, asunto y mensaje
+- Validación de campos requeridos
+- Envío de correos electrónicos al propietario del sitio
+- Mensajes de confirmación y error
 
 ### Animaciones
 - Efectos de entrada para elementos
