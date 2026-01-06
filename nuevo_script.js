@@ -208,57 +208,7 @@ function updateThemeIcon(isDarkMode) {
     }
 }
 
-// Función para inicializar el formulario de contacto
-function inicializarFormularioContacto() {
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                subject: formData.get('subject'),
-                message: formData.get('message')
-            };
-            
-            try {
-                // Mostrar mensaje de carga
-                formMessage.className = 'form-message';
-                formMessage.textContent = 'Enviando mensaje...';
-                formMessage.style.display = 'block';
-                
-                // Enviar el correo electrónico
-                const response = await fetch('/send-email', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok) {
-                    formMessage.className = 'form-message success';
-                    formMessage.innerHTML = '¡Mensaje enviado con éxito! Te responderé pronto.';
-                    contactForm.reset();
-                } else {
-                    formMessage.className = 'form-message error';
-                    formMessage.textContent = result.error || 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
-                }
-            } catch (error) {
-                formMessage.className = 'form-message error';
-                formMessage.textContent = 'Error de conexión. Por favor, inténtalo de nuevo más tarde.';
-            }
-        });
-    }
-}
-
-// Llamar a la función para inicializar el formulario de contacto
+// Llamar a la función de email.js para inicializar el formulario de contacto
 document.addEventListener('DOMContentLoaded', function() {
-    inicializarFormularioContacto();
+    EmailService.initializeContactForm();
 });
