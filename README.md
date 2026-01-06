@@ -30,6 +30,30 @@ Este es un portafolio web profesional moderno y atractivo para Frank Anconeyra, 
 - Tipografía de Google Fonts
 - Iconos de Font Awesome
 
+## Configuración de EmailJS
+
+Este proyecto utiliza EmailJS para enviar correos electrónicos desde el formulario de contacto. Para que funcione correctamente, debes configurar tu cuenta de EmailJS:
+
+### 1. Servicio de Correo Electrónico
+El proyecto está configurado para usar el servicio `service_u3i5vhf`. Para configurarlo:
+
+1. Inicia sesión en tu cuenta de [EmailJS](https://www.emailjs.com/)
+2. Ve a la sección de "Email Services"
+3. Asegúrate de que el servicio con ID `service_u3i5vhf` esté configurado y activo
+4. Si necesitas crear un nuevo servicio, sigue las instrucciones para conectar tu proveedor de correo (Gmail, Outlook, etc.)
+
+### 2. Plantilla de Correo Electrónico
+El proyecto utiliza una plantilla llamada `template_contact_form`. Esta plantilla debe contener los siguientes campos variables:
+- `from_name` - Nombre del remitente
+- `from_email` - Correo electrónico del remitente
+- `to_name` - Nombre del destinatario
+- `subject` - Asunto del correo
+- `message` - Mensaje del formulario
+- `reply_to` - Dirección para responder
+
+### 3. ID de Usuario
+El archivo `email.js` está configurado con un ID de usuario de EmailJS. Asegúrate de reemplazarlo con tu propio ID de usuario.
+
 ## Estructura del Sitio
 
 ### Secciones
@@ -45,6 +69,8 @@ Este es un portafolio web profesional moderno y atractivo para Frank Anconeyra, 
 - `index.html` - Página principal con la estructura HTML
 - `nuevo_estilo.css` - Hoja de estilos con diseño moderno y animaciones
 - `nuevo_script.js` - Funcionalidades JavaScript interactivas
+- `email.js` - Funcionalidad para enviar correos electrónicos usando EmailJS
+- `server.py` - Servidor simple para servir los archivos estáticos
 - `images/` - Carpeta con imágenes del portafolio
 
 ## Funcionalidades Implementadas
@@ -60,7 +86,7 @@ Este es un portafolio web profesional moderno y atractivo para Frank Anconeyra, 
 ### Formulario de Contacto
 - Campo para nombre, email, asunto y mensaje
 - Validación de campos requeridos
-- Envío de correos electrónicos al propietario del sitio
+- Envío de correos electrónicos usando EmailJS
 - Mensajes de confirmación y error
 
 ### Animaciones
@@ -77,6 +103,7 @@ Para personalizar el portafolio:
 2. **Colores**: Cambia las variables de color en `nuevo_estilo.css`
 3. **Imágenes**: Reemplaza las imágenes en la carpeta `images/`
 4. **Contenido**: Actualiza texto, enlaces y secciones según necesites
+5. **Configuración de EmailJS**: Actualiza el ID de usuario y asegúrate de tener configurado el servicio `service_u3i5vhf`
 
 ## Compatibilidad
 
