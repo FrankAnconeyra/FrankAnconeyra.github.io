@@ -176,17 +176,17 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('dragstart', event => event.preventDefault());
 
 // Funcionalidad del botón de modo oscuro/claro
-document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    // Verificar si hay un tema guardado en localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
-        updateThemeIcon(true);
-    }
-    
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// Verificar si hay un tema guardado en localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    updateThemeIcon(true);
+}
+
+if (themeToggle) {
     themeToggle.addEventListener('click', function() {
         body.classList.toggle('dark-mode');
         
@@ -197,13 +197,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Actualizar el icono del botón
         updateThemeIcon(isDarkMode);
     });
-    
-    function updateThemeIcon(isDarkMode) {
-        const icon = themeToggle.querySelector('i');
-        if (isDarkMode) {
-            icon.className = 'fas fa-sun';
-        } else {
-            icon.className = 'fas fa-moon';
-        }
+}
+
+function updateThemeIcon(isDarkMode) {
+    const icon = themeToggle.querySelector('i');
+    if (isDarkMode) {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
     }
+}
+
+// Llamar a la función para inicializar el formulario de contacto
+document.addEventListener('DOMContentLoaded', function() {
+    inicializarFormularioContacto();
 });
