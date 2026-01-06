@@ -107,6 +107,43 @@ body {
     font-weight: 700;
 }
 
+/* Ajustes para el botón de modo oscuro/claro en el header */
+.navbar {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+/* Contenedor para alinear el logo y menú a la izquierda, y el botón de tema a la derecha */
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.logo-and-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.theme-container {
+    display: flex;
+    align-items: center;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -152,6 +189,92 @@ body {
     background-color: #333;
     margin: 3px 0;
     transition: 0.3s;
+}
+
+/* Botón de modo oscuro/claro */
+.theme-toggle {
+    background: #f0f0f0;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle i {
+    font-size: 1.2rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode .header {
+    background: rgba(30, 30, 30, 0.95);
+    color: #f0f0f0;
+}
+
+body.dark-mode .nav-menu a {
+    color: #f0f0f0;
+}
+
+body.dark-mode .about {
+    background: #2a2a2a;
+}
+
+body.dark-mode .section-title h2 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .about-text h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .about-text p,
+body.dark-mode .about-text li {
+    color: #ccc;
+}
+
+body.dark-mode .skills-highlights,
+body.dark-mode .languages,
+body.dark-mode .education {
+    background: #333;
+    color: #f0f0f0;
+}
+
+body.dark-mode .tech-card {
+    background: #333;
+    color: #f0f0f0;
+    border: 1px solid #444;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+body.dark-mode .contact {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+body.dark-mode .footer {
+    background: #222;
 }
 
 /* Sección Hero */
