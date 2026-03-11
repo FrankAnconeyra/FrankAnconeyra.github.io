@@ -1,5 +1,26 @@
 // Script para la funcionalidad del menú hamburguesa
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar AOS (Animate On Scroll)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out-cubic',
+            once: false,
+            offset: 100,
+            delay: 0,
+            anchorPlacement: 'top-on-bottom'
+        });
+
+        // Refresh AOS on window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                AOS.refresh();
+            }, 250);
+        });
+    }
+    
     // Menú hamburguesa
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -164,16 +185,16 @@ function isMobile() {
 // Ajustes especiales para dispositivos móviles
 window.addEventListener('resize', function() {
     if (isMobile()) {
-        // Ajustes específicos para móviles si es necesario
         console.log('Vista móvil activada');
+        // Desactivar parallax en móviles
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = 'none';
+        }
     } else {
         console.log('Vista de escritorio activada');
     }
 });
-
-// Prevenir comportamientos no deseados
-document.addEventListener('contextmenu', event => event.preventDefault());
-document.addEventListener('dragstart', event => event.preventDefault());
 
 // Funcionalidad del botón de modo oscuro/claro
 const themeToggle = document.getElementById('themeToggle');
@@ -189,13 +210,19 @@ if (savedTheme === 'dark') {
 if (themeToggle) {
     themeToggle.addEventListener('click', function() {
         body.classList.toggle('dark-mode');
-        
+
         // Guardar preferencia en localStorage
         const isDarkMode = body.classList.contains('dark-mode');
         localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        
+
         // Actualizar el icono del botón
         updateThemeIcon(isDarkMode);
+        
+        // Animación del botón
+        this.style.transform = 'rotate(360deg) scale(1.2)';
+        setTimeout(() => {
+            this.style.transform = 'rotate(0deg) scale(1)';
+        }, 300);
     });
 }
 
@@ -210,5 +237,7 @@ function updateThemeIcon(isDarkMode) {
 
 // Llamar a la función de email.js para inicializar el formulario de contacto
 document.addEventListener('DOMContentLoaded', function() {
-    EmailService.initializeContactForm();
+    if (typeof EmailService !== 'undefined') {
+        EmailService.initializeContactForm();
+    }
 });
