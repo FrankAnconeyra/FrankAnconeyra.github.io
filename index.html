@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="nuevo_estilo.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
@@ -43,37 +44,38 @@
 
     <!-- Sección de Inicio -->
     <section id="inicio" class="hero">
+        <div class="hero-bg-animation"></div>
         <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="animate__animated animate__fadeInUp">Bienvenido a mi Portafolio</h1>
-                <p class="animate__animated animate__fadeInUp" data-animation-delay="0.2s">
+            <div class="hero-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                <h1 class="typing-text">Bienvenido a mi Portafolio</h1>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     Soy Frank Hernan Anconeyra Suyo, desarrollador apasionado por la tecnología y la innovación.
                 </p>
-                <div class="cta-buttons animate__animated animate__fadeInUp" data-animation-delay="0.4s">
-                    <a href="#sobre-mi" class="btn btn-primary">Conóceme</a>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                    <a href="#sobre-mi" class="btn btn-primary pulse-btn">Conóceme</a>
                     <a href="#tecnologias" class="btn btn-secondary">Ver Tecnologías</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="profile-circle">
+            <div class="hero-image" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="400">
+                <div class="profile-circle floating">
                     <img src="images/foto0011.jpg" alt="Frank Anconeyra">
                 </div>
             </div>
         </div>
-        <div class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
+        <div class="scroll-down" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+            <i class="fas fa-chevron-down bounce-icon"></i>
         </div>
     </section>
 
     <!-- Sección Sobre Mí -->
     <section id="sobre-mi" class="about">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-down" data-aos-duration="1000">
                 <h2>Sobre Mí</h2>
                 <div class="title-line"></div>
             </div>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <h3>Hola, soy Frank Hernan Anconeyra Suyo.</h3>
                     <p>
                         Este es mi sitio web donde puedes encontrar información sobre los proyectos donde trabajé, 
@@ -83,18 +85,18 @@
                         <li>Primero, poder compartir esta página como portafolio y que la gente me conozca</li>
                         <li>Segundo, mantener informado a mis seguidores sobre nuevos proyectos y nuevos estudios</li>
                     </ul>
-                    <div class="skills-highlights">
+                    <div class="skills-highlights reveal-on-scroll" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                         <h4>Áreas de Interés:</h4>
                         <p><i class="fas fa-code"></i> Me apasiona la programación web y la tecnología en general.</p>
                         <p><i class="fas fa-cloud"></i> Cloud computing e infraestructura de servidores.</p>
                         <p><i class="fas fa-brain"></i> Machine learning y Data Science.</p>
                     </div>
-                    <div class="languages">
+                    <div class="languages reveal-on-scroll" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                         <h4>Idiomas:</h4>
                         <p><i class="fas fa-flag"></i> Nativo: Español</p>
                         <p><i class="fas fa-globe"></i> Básico: Inglés</p>
                     </div>
-                    <div class="education">
+                    <div class="education reveal-on-scroll" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                         <h4>Formación:</h4>
                         <p><i class="fas fa-graduation-cap"></i> Estudiante</p>
                     </div>
@@ -106,68 +108,68 @@
     <!-- Sección de Tecnologías -->
     <section id="tecnologias" class="technologies">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-down" data-aos-duration="1000">
                 <h2>Tecnologías y Lenguajes de Programación</h2>
                 <div class="title-line"></div>
             </div>
             <div class="tech-grid">
-                <div class="tech-card">
+                <div class="tech-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
                     <div class="tech-icon">
                         <img src="images/52ef1a4ea924dfd59491df1f477701d4770d367e49ae6908ed2675d037b736dbd6be78f2ec6450c94e6c52c240f894587d3123647e1dc21ad88f0d_1280.png" alt="HTML">
                     </div>
                     <h3>HTML</h3>
                     <p>Lenguaje de marcado para la web</p>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="200">
                     <div class="tech-icon">
                         <img src="images/dbcf262103dd27dd7089de50c992e22f14436c235c2236cd1d5c8fdf3b11187cc773924df0938f2419a91e30790e05bea9847926a75736c187c237_1280.png" alt="CSS">
                     </div>
                     <h3>CSS</h3>
                     <p>Estilos y diseño web</p>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="300">
                     <div class="tech-icon">
                         <img src="images/88a40c2dd547e58e8fceec35100f7e525563b785ccf1e1ee89a6a954a9e446b3291f8582ad3ba5a780e91d6f073e80cd51f012f3ec08e954ab716a_1280.png" alt="JavaScript">
                     </div>
                     <h3>JavaScript</h3>
                     <p>Programación interactiva</p>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="400">
                     <div class="tech-icon">
                         <img src="images/6bf2f684-20e5-ba36-794a-8a8a14ff9f9b.jpeg" alt="Python">
                     </div>
                     <h3>Python</h3>
                     <p>Desarrollo backend y data science</p>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="500">
                     <div class="tech-icon">
                         <img src="images/60f37e4b-edeb-4b05-211c-2ef29985c405.png" alt="Java">
                     </div>
                     <h3>Java</h3>
                     <p>Desarrollo empresarial</p>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="600">
                     <div class="tech-icon">
                         <img src="images/d364dabe-a509-560a-7680-ad34744c6b09.jpeg" alt="Ruby">
                     </div>
                     <h3>Ruby</h3>
                     <p>Desarrollo web ágil</p>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="700">
                     <div class="tech-icon">
                         <img src="images/descarga.png" alt="MySQL">
                     </div>
                     <h3>MySQL</h3>
                     <p>Base de datos relacional</p>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="800">
                     <div class="tech-icon">
                         <img src="images/mongodb.webp" alt="MongoDB">
                     </div>
                     <h3>MongoDB</h3>
                     <p>Base de datos NoSQL</p>
                 </div>
-                <div class="tech-card">
+                <div class="tech-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="900">
                     <div class="tech-icon">
                         <img src="images/images1.jpg" alt="Cassandra">
                     </div>
@@ -181,21 +183,21 @@
     <!-- Sección de Contacto -->
     <section id="contacto" class="contact">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title" data-aos="fade-down" data-aos-duration="1000">
                 <h2>Contacto</h2>
                 <div class="title-line"></div>
             </div>
             <div class="contact-content">
-                <div class="contact-info">
+                <div class="contact-info" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <h3>¡Contáctame!</h3>
                     <p>¿Tienes un proyecto en mente? Estaré encantado de ayudarte.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon" data-aos="zoom-in" data-aos-delay="500"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" data-aos="zoom-in" data-aos-delay="600"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                <div class="contact-form">
+                <div class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
                     <form id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
@@ -209,7 +211,7 @@
                         <div class="form-group">
                             <textarea id="message" name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        <button type="submit" class="btn btn-primary pulse-btn">Enviar Mensaje</button>
                     </form>
                     <div id="formMessage" class="form-message"></div>
                 </div>
@@ -218,12 +220,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <p>&copy; 2024 Frank Anconeyra. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="email.js"></script>
     <script src="nuevo_script.js"></script>
 </body>
